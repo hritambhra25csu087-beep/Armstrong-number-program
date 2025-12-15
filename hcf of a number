@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int a, b, hcf;
+
+    printf("Enter a: ");
+    scanf("%d", &a);
+
+    printf("Enter b: ");
+    scanf("%d", &b);
+
+    // Initialize hcf to 1
+    hcf = 1;
+
+    // Find the smaller of a and b
+    int min;
+    if (a < b)
+        min = a;
+    else
+        min = b;
+
+    // Find HCF using loop
+    for (int i = 1; i <= min; i++) {
+        if (a % i == 0 && b % i == 0) {
+            hcf = i;
+        }
+    }
+
+    printf("HCF of %d and %d is: %d\n", a, b, hcf);
+
+    return 0;
+}
